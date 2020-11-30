@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>滚动切换搜索框</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        .box-1{
+            height: 200px;
+           border: 1px solid red;
+            position: relative;
+        }
+        .box-1 .search{
+            height: 40px;
+            width: 80%;
+            border-radius: 20px;
+            border: 1px solid red;
+            background-color: #fff;
+            position: absolute;
+            left: 10%;
+            bottom: -20px;
+            display:none;
+            top: auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+            outline:none;
+        }
+        .box-1 .search.fixed{
+            height: 40px;
+            width: 80%;
+            border-radius: 20px;
+            border: none;
+            position: fixed;
+            left: 10%;
+            top: 5px;
+            bottom: auto;
+        }
+        .box-top{
+            height: 40px;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;	
+            z-index: 1;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box-top" id="top"></div>
+    <div class="box-1">
+        <input type="text" class="search" id="search">
+    </div>
+    <div style="height: 1000px;background-color: black;"></div>
+    <script type="text/javascript">
+        var top=document.querySelector("#top");
+        var search=document.querySelector("#search");
+        var height=search.offsetTop;
+        var flag=true;
+ 
+        document.addEventListener("scroll",function () {
+            if(document.documentElement.scrollTop>=height){
+                if(flag){
+                    flag=false;
+                   search.classList.add("fixed");
+                   search.style.display = "block";
+                }
+            }else {
+                if(!flag){
+                    flag=true;
+                   search.classList.remove("fixed");
+                }
+            }
+        },false);
+    </script>
+</body>
+</html>
