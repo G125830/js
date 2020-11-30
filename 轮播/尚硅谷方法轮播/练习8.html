@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+				*{
+					margin: 0;
+					padding: 0;
+					text-decoration: none;
+				}
+				#list{
+					width: 3600px;
+					height: 470px;
+					position: absolute;
+					z-index: 1;
+				}
+				#list img{
+					float: left;
+					width: 600px;
+				}
+				body{
+					padding: 20px;
+				}
+				#container{
+					width: 600px;
+					height: 470px;
+					overflow: hidden;
+					position: relative;
+					margin: 0 auto;
+				}			
+				#pointsDiv{
+					position: absolute;
+					height: 10px;
+					width: 100px;
+					z-index: 2;
+					bottom: 20px;
+					left: 250px;
+				}			
+				#pointsDiv span{
+					cursor: pointer;
+					float: left;
+					border: 1px solid #fff;
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background-color: #333;
+					margin-right: 5px;
+				}
+				#pointsDiv .on{
+					background-color: orange;
+				}
+				#container .arrow{	
+					cursor: pointer;
+					line-height: 39px;
+					position: absolute;
+					left: 0;
+					top: 0;
+					display: none;
+				}
+				.arrow:hover{
+					background-color: rgba(0,0,0,0.7);
+				}
+				#container:hover .arrow{
+					display: block;
+				}
+				#prev{	
+					width: 50px;
+					height: 50px;
+					position: absolute;
+					left: 28px;
+					top: 243px;
+					font-size: 36px;
+					text-align: center;
+					z-index: 999;
+					color: #3A6EA5;
+				}
+				#next{
+					width: 50px;
+					height: 50px;
+					position: absolute;
+					top: 243px;
+					right: 28px;
+					font-size: 36px;
+					text-align: center;
+					z-index: 999;
+					color: #3A6EA5;
+				}
+			</style>
+		</head>
+		<body>
+			<div id='container'>
+				<div id="list" style="left: -600px;">
+					<img src="../图片库/image/img(4).jpg.jpg">
+					<img src="../图片库/image/img(1).jpg.webp">
+					<img src="../图片库/image/img(2).jpg.webp">
+					<img src="../图片库/image/img(3).jpg.webp">
+					<img src="../图片库/image/img(4).jpg.jpg">
+					<img src="../图片库/image/img(1).jpg.webp">
+				</div>
+				<div id="pointsDiv">
+					<span index='1' class="on"></span>
+					<span index='2'></span>
+					<span index='3'></span>
+					<span index='4'></span>
+				</div>
+			</div>
+			<a href="javascript:;" id="prev" class="arrow"></a>
+			<a href="javascript:;" id="next" class="arrow">></a>
+			<script src="../jQuery库/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				/*
+				功能说明:
+				1. 点击向右(左) 的图标，平滑切换到下(上)一页
+				2.无限循环切换:第一页的上一页为最后页，最后一页的下一页 是第一页
+				3.每隔3秒自动滑动到下一页
+				4.当鼠标进入图片区域时，自动切换停止，当鼠标离开后，又开始自动切换
+				5.切换页面时，下面的圆点也同步更新
+				6. 点击圆点图标切换到对应页
+				BUG:快速点击时翻页不正常
+				
+				*/
+			   //----------------------------------------------
+			   $(function(){
+				   var $container = $('#container')
+				   var $list = $('#list')
+				   var $points = $('#pointsDiv>span')
+				   var $next = $('#next')
+				   var $prev = $('#prev')
+				   var time = 500
+				   var intervalTime = 20
+				   var PAGE_WIDTH = 600
+				   var imgCont = $points.length
+				   var index = 0
+				   var moving = false//标识是否正在翻页(默认没有)
+				   
+				   $next.click(function(){
+					   nextPage(true)
+				   })
+				   $prev.click(function(){
+					   nextPage(false)
+				   })
+				   //---------------------------------------
+				   var intervalId1 = setInterval(function(){
+					   nextPage(true)
+				   },3000)
+				   $list.mouseenter(function(){
+					   clearInterval(intervalId1)
+				   })
+				   $list.mouseleave(function(){
+					   intervalId1 =setInterval(function(){
+					   	 nextPage(true)
+					   },3000)
+				   })
+				   //----------------------------------------
+				   $points.click(function(){
+					   var targetIndex = $(this).index()
+				   		nextPage(targetIndex)			   
+				   })
+				   //---------------------------------------
+				   function nextPage(next){
+					   if(moving){//已经正在翻页中
+						   return
+					   }
+					   moving = true//标识正在翻页
+					   var current = $list.position().left
+					   var offset = 0
+					   if(typeof next === 'boolean'){
+						 offset = next? -PAGE_WIDTH: PAGE_WIDTH
+					   }else{
+						 offset = -(next - index)*PAGE_WIDTH  
+					   }
+					   
+					   var itemOffset = parseInt(offset / (time / intervalTime))
+					   var targetLeft = current + offset
+					   var intervalId =setInterval(function(){
+						   current += itemOffset
+						    
+						   if(current === targetLeft){
+						   	clearInterval(intervalId)
+							moving = false
+						   }
+						   if(current === 0){
+						   current = -imgCont*PAGE_WIDTH
+						   }else if(current === -(imgCont+1)*PAGE_WIDTH){
+						    current = -PAGE_WIDTH
+						    }
+						  $list.css('left',current)
+					   },intervalTime) 
+					   updatePoints(next)
+				   }
+				   //------------------------------------------------------------
+				  function updatePoints(next){
+					  var targetIndex = 0
+					  if(typeof next === 'boolean'){
+						  if(next){
+						  	targetIndex = index + 1
+						  	if(targetIndex === imgCont){
+								targetIndex = 0
+							}}else{
+					             targetIndex = targetIndex -1
+					             if(targetIndex === -1){
+					             targetIndex = imgCont-1
+						  	  }
+						  }
+					  }else{
+						  targetIndex = next
+					  }
+					  
+					  $points.eq(index).removeClass('on')
+					  $points.eq(targetIndex).addClass('on')
+					  index = targetIndex
+				  }
+			   })
+			</script>
+	</body>
+</html>

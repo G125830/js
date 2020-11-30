@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				list-style: none;
+			}
+			.slider{
+				width:590px;
+				height:470px;
+				border:5px solid red;
+				position:relative;
+			}
+			.slider .list .item{
+				position:absolute;
+				top:0;
+				left:0;
+				opacity: 0;
+			}
+			.slider .list .item:first-of-type{
+				opacity:1;
+			}
+			.slider .prev,.slider .next{
+				position:absolute;
+				top:235px;
+			}
+			.slider .next{
+				right:0;
+			}
+			.slider .pagination{
+				position:relative;
+				top:300px;
+			}
+			.slider .pagination .bullet{
+				width: 20px;
+				height:20px;
+				background-color: black;
+				margin-left:5px;
+				float:left;
+				border:2px solid yellow;
+				cursor:pointer;
+				color: white;
+				line-height:20px;
+				text-align:center;
+			}
+			.slider .pagination .bullet.focus{
+				background-color: #00FF00;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider">
+			<ul class="list">
+				<li class="item"><img src="../图片库/image/img(1).jpg.webp" alt=""></li>
+				<li class="item"><img src="../图片库/image/img(2).jpg.webp" alt=""></li>
+				<li class="item"><img src="../图片库/image/img(3).jpg.webp" alt=""></li>
+				<li class="item"><img src="../图片库/image/img(4).jpg.jpg" alt=""></li>
+			</ul>
+			<button class = 'prev'>prev</button>
+			<button class = 'next'>next</button>
+			<ul class="pagination">
+				<li class="bullet">1</li>
+				<li class="bullet">2</li>
+				<li class="bullet">3</li>
+				<li class="bullet">4</li>
+			</ul>
+		</div>
+		<script src="../千峰方法轮播/练习.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function(){
+				var prevIndex,nextIndex;
+				var len;
+				var Id;
+				inis();
+				function inis(){
+					len = document.querySelectorAll('.list .item').length;
+					prevIndex = nextIndex = 0;
+					document.querySelector('.prev').onclick = function(){
+						sliderPrev();
+					}
+					document.querySelector('.next').onclick = function(){
+						sliderNext();
+					}
+					var bullets = document.querySelectorAll('.slider .pagination .bullet');
+					for(var i = 0; i < bullets.length; i++){
+						bullets[i].index = i;
+						bullets[i].onclick = function(){
+							prevIndex = nextIndex;
+							nextIndex = this.index;
+							sliderTo(prevIndex,nextIndex);
+						}
+					}
+					var slider = document.querySelector('.slider')
+					slider.onmouseover = function(){
+						stop();
+					}
+					
+					slider.onmouseout = function(){
+						auto();
+					}
+					auto();
+				}
+				function sliderPrev(){
+					prevIndex = nextIndex;
+					nextIndex--;
+					if(nextIndex === -1){
+						nextIndex = len - 1;
+					}
+					sliderTo(prevIndex,nextIndex);
+				}
+				
+				function sliderNext(){
+					prevIndex = nextIndex;
+					nextIndex++;
+					if(nextIndex === len){
+						nextIndex = 0;
+					}
+					sliderTo(prevIndex,nextIndex);
+				}
+				
+				function auto(){
+					clearInterval(Id);
+					Id = setInterval(function(){
+						sliderNext()
+					},2000)
+				}
+				
+				function stop(){
+					clearInterval(Id);
+				}
+				
+				function sliderTo(prev,next){
+					var lis = document.querySelectorAll('.list .item');
+					var bullets = document.querySelectorAll('.pagination .bullet');
+					bullets[prev].className = 'bullet';
+					bullets[next].className = 'bullet focus';
+					animation(lis[prev],{opacity:0});
+					animation(lis[next],{opacity:100});
+				}
+			})()
+		</script>
+	</body>
+</html>
