@@ -1,0 +1,164 @@
+.bdph{
+    margin: 0.4rem 0.15rem;
+}
+.bdph .top{
+    padding: 0.3rem 0.3rem 0.39rem 0.3rem;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0.3rem;
+    position: relative;
+    box-shadow: 0 0 0.32rem 0 rgba(13, 13, 37, 0.05);
+}
+.bdph .top .img{
+    width: 100%;
+    border-radius: 0.3rem 0.3rem 0 0;
+    overflow: hidden;
+}
+.bdph .top .img img{
+    width: 100%;
+    height: 100%;
+}
+.bdph .top .hd{
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    background: linear-gradient(-60deg, #FF7109 0%, #FF0909 100%);
+    border-radius: 0.3rem 0 0.2rem 0;
+    height: 0.5rem;
+    white-space: nowrap;
+}
+.bdph .hd .big{
+    padding-left: 0.19rem;
+    padding-right: 0.28rem;
+    font-size: 0.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 0.42rem;
+}
+.bdph .hd .hd_num{
+    font-size: 0.24rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 0.42rem;
+    padding-right: 0.19rem;
+}
+.tag{
+    width: 6.6rem;
+    height: 0.5rem;
+    background: #F8F8F8;
+    margin-top: 0.30rem;
+    margin-bottom: 0.29rem;
+    white-space: nowrap;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ .tag span{
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    line-height: 0.25rem;
+    padding-right: 0.29rem;
+}
+.tag .tag-name{
+    width: 1.8rem;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.19rem;
+    float: left;
+    padding-top: 0.12rem;
+}
+.tags{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tags i img{
+    width: 0.3rem;
+    height: 0.25rem;    
+}
+.tags span{
+    font-size: 0.28rem;
+    font-weight: 400;
+    color: #29211d;
+    line-height: 0.5rem;
+    margin-left: 0.18rem;
+}
+.bdph_title{
+    margin-top: 0.4rem;
+    font-size: 0.36rem;
+    font-weight: 800;
+    color: #29211d;
+    line-height: 0.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.bdph_price{
+    margin-top: 0.33rem;
+    line-height: 0.3rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.bdph_price span{ 
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    height: 0.26rem;
+}
+.bdph_price .money{
+    font-size: 0.3rem;
+    font-weight: bold;
+    color: #ff5f61;
+}
+.bdph_price .count{
+    margin-right: 0.4rem;
+}
+.bdph .bottom-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.45rem
+}
+.bdph .bottom-btn a{
+    width:3.15rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+.bdph .bottom-btn .yellow-btn{
+    background: #ffb516;
+}
+.bdph .bottom-btn .yykf{
+    background: #ff5f61;
+}
+.fixed-bottom-btn a{
+    width: 3.25rem;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+}
+.fixed-bottom-btn .line-btn{
+    border: 1px solid #ff6c6e;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #ff6c6e;
+}
+.fixed-bottom-btn .pink-btn{
+    width: 3.25rem;
+    height: 0.88rem;
+    background: linear-gradient(90deg, #FF5F61 0%, #FF6C6E 100%);
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #ffffff;
+}

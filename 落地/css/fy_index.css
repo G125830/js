@@ -1,0 +1,319 @@
+/*banner*/
+.imgs-box{
+    height:5.7rem;
+}
+.imgs-box img{
+    width: 100%;
+}
+.imgs-box .labtxt{
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.9rem;
+    height: 0.4rem;
+    background:rgba(0, 0, 0, .8);
+    border-radius: .2rem;
+    z-index: 5;
+    font-size: .24rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #FEFEFE;
+    line-height: 0.4rem;
+    padding: 0 0.2rem;
+}
+.imgs-box   .tags{
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0.9rem;
+    z-index: 5;
+}
+.imgs-box .tags span{
+    display: inline-block;
+    height: 0.4rem;
+    background:rgba(255, 255, 255, .8);
+    border-radius: .2rem;
+    z-index: 5;
+    font-size: .24rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    line-height: 0.4rem;
+    padding: 0 0.2rem;
+    color: #29211D;
+}
+.imgs-box .label{
+    padding: 0 0.25rem;
+    height: .54rem;
+    background: #FFB516;
+    border-radius: 0px 0px 0.2rem 0px;
+    font-size: .32rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 0.54rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+/*头部信息*/
+.header .back img{
+    width: 0.18rem;
+    height: 0.3rem;
+}
+.header .middle{
+    font-weight: bold;
+    font-size: 0.36rem;
+}
+.house-head {
+    z-index: 2;
+    margin-top:-0.6rem;
+    position: relative;
+    box-shadow: 0px 0.03rem 0.24rem 0px rgba(52, 50, 93, 0.1);
+    padding-top: 0.33rem;
+}
+.house-head .house-name h1{
+    font-size: 0.46rem;
+    line-height: .6rem;
+}
+.house-head .house-info {
+    margin-top: .43rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right:-0.3rem;
+    margin-left:-0.3rem;
+}
+.house-head .house-info li {
+    border-right: 1px rgba(229, 229, 229, 1) solid;
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 33.33%;
+    padding-left: 0.3rem;
+}
+
+.house-head .house-info li span{
+    display: block;
+}
+.house-head .house-info li b{
+    display: block;
+    font-size: 0.36rem;
+    font-weight: bold;
+    color: #FF6263;
+    line-height: 0.36rem;
+    margin-top: 0.2rem;
+}
+.house-head .house-info li:last-child {
+    border: none;
+}
+.house-head .line{
+    border-top: 0.01rem rgba(212, 211, 211, 1) solid;
+    margin-top: 0.64rem;
+    margin-bottom: 0.3rem;
+}
+.house-head .line span{
+    font-size: 0.28rem;
+    display: block;
+    width: 3.5rem;
+    line-height: 0.28rem;
+    background: #fff;
+    margin: -.14rem auto 0;
+    text-align: center;
+
+}
+.house-head .line span em{
+    color: rgba(255, 95, 97, 1);
+    font-weight: bold;
+}
+.house-head .fy-mess{
+    color: #29211D;
+    font-size: 0.32rem;
+    margin-top: 0.3rem;
+}
+.house-head .fy-mess li{
+    width: 50%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 0.7rem;
+}
+.house-head .fy-mess li.one{
+    width: 100%;
+}
+.house-head .fy-mess li a{
+    color: #FF6263;
+}
+.house-head .fy-mess li a i{
+    background-image: url("../images/fy/arr-right.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width:0.12rem;
+    height: 0.21rem;
+    display: inline-block;
+    margin-left: 0.1rem;
+}
+.house-head .bottom-btn{
+    margin-top: 0.3rem;
+    height: 0.98rem;
+    background: rgba(255, 98, 99, .1);
+    border-radius: 0.08rem;
+    font-size:0.3rem;
+    font-weight: 400;
+    color: #FF6263;
+    padding: 0 0.3rem;
+    line-height: 0.98rem;
+}
+.house-head .bottom-btn a{
+    display: inline-block;
+    width: 1.42rem;
+    height: .58rem;
+    background: #FF6263;
+    border-radius: 0.08rem;
+    float: right;
+    margin-top: 0.2rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.58rem;
+}
+/*小区信息*/
+.xq-mess .tab-menu{
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.15rem;
+}
+.xq-mess .tab-menu a{
+    display: inline-block;
+    padding: 0 0.25rem;
+    height: 0.6rem;
+    background: rgba(255, 98, 99, .1);
+    border-radius: 0.08rem;
+    line-height: 0.6rem;
+    position: relative;
+    font-size: .26rem;
+    font-weight: 500;
+    color: #FF6263;
+}
+.xq-mess .tab-menu a.active{
+    background: linear-gradient(76deg, #FF5F61 0%, #FF6C6E 100%);
+    color: #fff;
+}
+.xq-mess .tab-menu a.active::after{
+    content: '';
+    border-width: .08rem;
+    border-style: solid;
+    border-color: rgba(255, 108, 110, 1) transparent transparent;
+    left: 50%;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    margin-left: -0.05rem;
+    bottom: -0.15rem;
+}
+/*成交记录*/
+.cjjl .table{
+    border: 0.01rem solid #D7D7D7;
+    border-bottom: 0.01rem solid transparent;
+    border-radius: 0.08rem;
+}
+.cjjl .table tr td{
+    border-right: 0.01rem solid #D7D7D7;
+    border-bottom: 0.01rem solid #D7D7D7;
+    line-height: 0.58rem;
+    text-align: center;
+}
+.cjjl .table tr td.red{
+    color: rgba(255, 98, 99, 1);
+}
+.cjjl .table tr td:last-child{
+    border-right: none;
+}
+.cjjl .table tr:first-child{
+    background: #F8F8F8;
+}
+/*参考首付*/
+.cksf .tab-menu{
+    font-size: 0.36rem;
+    line-height: 0.37rem;
+    margin-bottom: 0.4rem;
+}
+.cksf .tab-menu a{
+    margin-right: 0.3rem;
+}
+.cksf .tab-menu .active{
+    font-weight: 800;
+    color: #FF6C6E;
+    position: relative;
+}
+.cksf .tab-menu .active::after{
+    content: '';
+    display: inline-block;
+    width: .3rem;
+    height: 0.06rem;
+    background: #FF6C6E;
+    border-radius: 0.03rem;
+    position: absolute;
+    bottom:-0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cksf .tab-show .item{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.cksf .tab-show .left{
+    width: 2.87rem;
+    height: 1.40rem;
+    border: 1px solid #D7D7D7;
+    border-radius:0.08rem;
+    padding: 0.11rem 0;
+}
+.cksf .tab-show .right{
+    background-image: url("../images/fy/bg1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width:3.51rem;
+    height: 1.4rem;
+    padding: 0.11rem 0.25rem;
+    text-align: left;
+}
+.cksf .tab-show .item span{
+    display: block;
+    font-size: 0.24rem;
+    line-height: 0.42rem;
+    font-weight: 500;
+}
+.cksf .tab-show .item .price{
+    padding-top: 0.2rem;
+}
+.cksf .tab-show .item .price b{
+    font-size: 0.6rem;
+}
+.cksf .tab-show .item .grey{
+    font-size: .22rem;
+    font-weight: 400;
+    color: #8A8A8A;
+    margin-top: -0.07rem;
+}
+.fixed-bottom-btn .btn{
+    width: 2.1rem;
+    text-align: center;
+    line-height: 0.88rem;
+    height: 0.88rem;
+    border-radius: .08rem;
+}
+.fixed-bottom-btn .line-btn{
+    border: 1px solid #FF6D6F;
+    color: rgba(255, 106, 108, 1);
+}
+.fixed-bottom-btn .yellow-btn{
+    background: rgba(255, 181, 22, 1);
+    color: #fff;
+}
+.fixed-bottom-btn .red-btn{
+    background: linear-gradient(90deg, #FF5F61 0%, #FF6C6E 100%);
+    color: #fff;
+}

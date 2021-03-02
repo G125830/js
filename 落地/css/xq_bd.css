@@ -1,0 +1,231 @@
+.xqph{
+    margin: 0.4rem 0.15rem;
+}
+.xqph .top{
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0.3rem;
+    position: relative;
+    box-shadow: 0 0 0.32rem 0 rgba(13, 13, 37, 0.05);
+}
+.xqph .top .hd{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-60deg, #FF7109 0%, #FF0909 100%);
+    border-radius: 0.3rem 0 0.2rem 0;
+    height: 0.5rem;
+    white-space: nowrap;
+}
+.xqph .top .hd .big{
+    padding-left: 0.19rem;
+    padding-right: 0.28rem;
+    font-size: 0.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 0.42rem;
+}
+.xqph .top .hd .hd_num{
+    font-size: 0.24rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 0.42rem;
+    padding-right: 0.19rem;
+}
+.xqph .top .xqph_title{
+    padding-top: 0.9rem;
+    padding-left: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+.xqph .top .xqph_title .name{
+    display: inline-block;
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.36rem;
+    font-weight: 800;
+    color: #29211d;
+    line-height: 0.4rem;
+}
+.xqph .top .xqph_title .price{
+    font-size: 0.3rem;
+    font-weight: bold;
+    color: #ff5f61;
+    line-height: 0.4rem;
+    padding-right: 0.3rem;
+}
+.xqph .tag{
+    width: 6.6rem;
+    height: 0.5rem;
+    background: #F8F8F8;
+    margin-top: 0.30rem;
+    margin-bottom: 0.29rem;
+    white-space: nowrap;
+    border-radius: 0.08rem;
+    margin-left: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.xqph .tag span{
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    line-height: 0.25rem;
+    padding-right: 0.29rem;
+}
+.xqph .tags{
+    padding-left: 0.3rem;
+}
+.xqph .tags i img{
+    width: 0.3rem;
+    height: 0.25rem; 
+}
+.xqph .tags span{
+    font-size: 0.28rem;
+    font-weight: 400;
+    color: #29211d;
+    line-height: 0.5rem;
+    margin-left: 0.18rem;
+}
+.xqph .tag .tag-name{
+    width: 1.8rem;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.19rem;
+    float: left;
+    padding-top: 0.12rem;
+}
+.scroll-box{
+    margin-top: 0.38rem;
+    padding: 0 0.3rem 0.4rem;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.scroll-box .item{
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+    display: inline-block;
+    margin-right: 0.2rem;
+    position: relative;
+    width: 3.56rem;
+    height: 4.35rem;
+    overflow: hidden;
+}
+.scroll-box .item .img{
+    width: 3.56rem;
+    height: 2.67rem;
+}
+.scroll-box .item .img img{
+    width: 3.56rem;
+    height: 2.67rem;
+    border-radius: 0.08rem;
+}
+.scroll-box .item .xqph_hd{
+    height: 0.44rem;
+    font-size: 0.24rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 0.1rem 0.2rem;
+    background-color: #ffb516;
+    border-radius: 0.08rem 0rem 0.2rem 0rem;
+    width: auto;
+    position: absolute;
+    line-height: 0.28rem;
+    top: 0;
+    left: 0;
+}
+.scroll-box .item ul{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.28rem;
+    line-height: 0.28rem;
+    margin-top: 0.2rem;
+    font-weight: bold;
+}
+.scroll-box .item .price{
+    color: #FF5F61;
+}
+.scroll-box .item .btn{
+    width: 3.56rem;
+    height: 0.78rem;
+    background: #ff6c6e;
+    border-radius: 0.08rem;
+    line-height: 0.78rem;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0.4rem;
+}
+.scroll-box .item.itembg{
+    background-image: url(../images/list/bg3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 2.74rem;
+    height: 4.35rem;
+    border-radius: 0.08rem;
+    text-align: center;
+}
+.scroll-box .itembg p{
+    padding-top: 1.14rem;
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 800;
+    color: #29211D;
+    line-height: 0.48rem;
+}
+.scroll-box .itembg p.good{
+    font-size: 0.24rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    line-height: 0.32rem;
+   padding-top: 0.19rem;
+}
+
+.scroll-box .itembg .ckgd-btn{
+    width: 1.9rem;
+    height: 0.68rem;
+    background: #FF6C6E;
+    border-radius: 0.08rem;
+    /*margin-top: 0.4rem;*/
+    margin:  0.4rem auto;
+}
+.scroll-box .itembg  .ckgd-btn a{
+    font-size: 0.3rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 0.68rem;
+}
+
+
+
+
+
+.fixed-bottom-btn a{
+    width: 3.25rem;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+}
+.fixed-bottom-btn .line-btn{
+    border: 1px solid #ff6c6e;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #ff6c6e;
+}
+.fixed-bottom-btn .pink-btn{
+    width: 3.25rem;
+    height: 0.88rem;
+    background: linear-gradient(90deg, #FF5F61 0%, #FF6C6E 100%);
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #ffffff;
+}

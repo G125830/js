@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>投放小区详情页</title>
+<meta name="description" content="投放落地页">
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,address=no">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/swiper.css">
+<link rel="stylesheet" href="css/fy_index.css">
+
+</head>
+<script type="text/javascript">
+	;(function(win) {
+		var remCalc = {};
+		var docEl = win.document.documentElement,
+				tid;
+
+		function refreshRem() {
+			var width = docEl.getBoundingClientRect().width;
+			//if (width > 750) { width = 750 }
+			var rem = width / 750*100;
+			docEl.style.fontSize = rem + "px";
+			remCalc.rem = rem;
+			//误差、兼容性处理
+			var actualSize = parseFloat(window.getComputedStyle(document.documentElement)["font-size"]);
+			if (actualSize !== rem && actualSize > 0 && Math.abs(actualSize - rem) > 1) {
+				var remScaled = rem * rem / actualSize;
+				docEl.style.fontSize = remScaled + "px"
+			}
+		}
+
+		function dbcRefresh() {
+			clearTimeout(tid);
+			tid = setTimeout(refreshRem, 100)
+		}
+
+		win.addEventListener("resize", function() { dbcRefresh() }, false);
+		win.addEventListener("pageshow", function(e) {
+			if (e.persisted) { dbcRefresh() }
+		}, false);
+		refreshRem();
+		remCalc.refreshRem = refreshRem;
+		win.remCalc = remCalc
+	})(window);
+	var _hmt = _hmt || [];
+	//百度自动推送代码
+	(function(){
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?138bec4bfa104f11f52a368c5200a54e";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<body>
+<input type="hidden" id="cityId"  value="12"/>
+<input id="triggerPage" value="信息流页" type="hidden"/>
+<input id="jwChannel" value="楼盘库" type="hidden"/>
+<div class="page">
+	<!-- 引入公共头部模块 -->
+	<header class="header">
+		<div class="left">
+			<a href="#" class="back"><img src="images/fy/back.png"></a>
+		</div>
+		<div class="middle">房源详情</div>
+		<div class="tel-number">
+		</div>
+	</header>
+	<!--头部end-->
+	<div class="content">
+		<div class="imgs-box swiper-container" id="swiper1">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide">
+					<a href="javascript:;"><img src="images/fy/banner.png" alt="楼盘名+VR看房" class="swiper-lazy" >
+					</a>
+				</li>
+				<li class="swiper-slide" >
+					<a href="javascript:;"><img src="images/fy/banner.png"  alt="" class="swiper-lazy"></a>
+				</li>
+				<li class="swiper-slide" >
+					<a href="javascript:;"><img src="images/fy/banner.png"  alt="" class="swiper-lazy"></a>
+				</li>
+			</ul>
+			<div class="labtxt">
+				<span class="count">1/20</span>
+			</div>
+			<div class="tags">
+				<span>房本满二</span>
+				<span>近地铁</span>
+				<span>交通便利</span>
+			</div>
+			<div class="label">价格低于同小区20%</div>
+		</div>
+		<div class="house-head divgap">
+			<div class="house-name">
+				<h1>碧桂园凤凰国碧桂园凤凰国际公馆际公馆</h1>
+			</div>
+			<ul class="house-info">
+				<li>
+					<span>售价</span>
+					<b>约450万</b>
+				</li>
+				<li>
+					<span>户型</span>
+					<b>三室两厅</b>
+				</li>
+				<li>
+					<span>建筑面积</span>
+					<b>150㎡</b>
+				</li>
+			</ul>
+			<div class="line">
+				<span>已有<em>332</em>人订阅变价通知</span>
+			</div>
+			<div class="liuzi">
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号" class="tel" value="">
+						<!--<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>-->
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap">
+					<a href="javascript:;" class="submit_btn" onclick="send(this)" data-bid="楼盘id">变价通知我</a>
+				</div>
+			</div>
+			<div class="fy-mess">
+				<ul class="clearfix">
+					<li>单价：10226元/m</li>
+					<li>朝向：东南</li>
+					<li>开盘期数：三期</li>
+					<li>年代：2010年</li>
+					<li>楼层：中楼层</li>
+					<li><a href="javascript:;" onclick="zxlc()">咨询楼层<i></i></a> </li>
+					<li class="one">所属小区：生桃花俊园（宝安-西乡）</li>
+					<li class="one">学校信息：<a href="javascript:;" onclick="school()">咨询中小学情况<i></i></a></li>
+				</ul>
+
+			</div>
+			<div class="bottom-btn">留下出价，更早获得房主反馈<a href="javascript:;" onclick="setPrice()">去出价</a> </div>
+
+		</div>
+		<!--小区周边-->
+		<div class="xq-mess divgap">
+			<div class="tab-menu">
+				<a href="javascript:;" class="active">景观园林</a>
+				<a href="javascript:;">公共环境</a>
+				<a href="javascript:;">社区氛围</a>
+				<a href="javascript:;">物业服务</a>
+				<a href="javascript:;">物业服务</a>
+			</div>
+			<div class="tab-show">
+				<div class="item">
+					<p>万科物业3层半复试，使用率高，带两个露台花园式小区。有游泳池且楼下商铺会所美容餐饮一体，小区安静舒适，适合家里有老人小孩的一家人居住，泳池且楼安静不受打扰，依山而建空气好</p>
+					<p>医院邻近黄科大附属医院、第六人民医院、第多家省级十佳医院</p>
+				</div>
+				<div class="item" style="display:none;">
+					<p>22万科物业3层半复试，使用率高，带两个露台花园式小区。有游泳池且楼下商铺会所美容餐饮一体，小区安静舒适，适合家里有老人小孩的一家人居住，泳池且楼安静不受打扰，依山而建空气好</p>
+					<p>医院邻近黄科大附属医院、第六人民医院、第多家省级十佳医院</p>
+				</div>
+				<div class="item" style="display:none;">
+					<p>33万科物业3层半复试，使用率高，带两个露台花园式小区。有游泳池且楼下商铺会所美容餐饮一体，小区安静舒适，适合家里有老人小孩的一家人居住，泳池且楼安静不受打扰，依山而建空气好</p>
+					<p>医院邻近黄科大附属医院、第六人民医院、第多家省级十佳医院</p>
+				</div>
+				<div class="item" style="display:none;">
+					<p>万科物业3层半复试，使用率高，带两个露台花园式小区。有游泳池且楼下商铺会所美容餐饮一体，小区安静舒适，适合家里有老人小孩的一家人居住，泳池且楼安静不受打扰，依山而建空气好</p>
+					<p>医院邻近黄科大附属医院、第六人民医院、第多家省级十佳医院</p>
+				</div>
+				<div class="item" style="display:none;">
+					<p>万科物业3层半复试，使用率高，带两个露台花园式小区。有游泳池且楼下商铺会所美容餐饮一体，小区安静舒适，适合家里有老人小孩的一家人居住，泳池且楼安静不受打扰，依山而建空气好</p>
+					<p>医院邻近黄科大附属医院、第六人民医院、第多家省级十佳医院</p>
+				</div>
+			</div>
+		</div>
+		<!--成交记录-->
+		<div class="cjjl divgap">
+			<div class="title">成交记录</div>
+			<table class="table" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td>户型</td>
+					<td>面积</td>
+					<td>成交价</td>
+					<td>成交时间</td>
+				</tr>
+				<tr>
+					<td>三室两厅</td>
+					<td>139㎡</td>
+					<td class="red">3**万</td>
+					<td>2021.02.20</td>
+				</tr>
+				<tr>
+					<td>三室两厅</td>
+					<td>139㎡</td>
+					<td class="red">3**万</td>
+					<td>2021.02.20</td>
+				</tr>
+				<tr>
+					<td>三室两厅</td>
+					<td>139㎡</td>
+					<td class="red">3**万</td>
+					<td>2021.02.20</td>
+				</tr>
+
+			</table>
+			<div class="btnwrap">
+				<a href="javascript:;" class="submit_btn" onclick="cjcx()" data-bid="楼盘id">查看最近成交价</a>
+			</div>
+		</div>
+		<!--参考首付-->
+		<div class="cksf divgap">
+			<div class="title">参考首付</div>
+			<div class="tab-menu">
+				<a href="javascript:;" class="active">首套</a>
+				<a href="javascript:;">二套</a>
+			</div>
+			<div class="tab-show">
+				<div class="item">
+					<div class="left">
+						<span>首付总计(不含服务费)</span>
+						<span class="price">约<b>40.92</b>万</span>
+					</div>
+					<div class="right">
+						<span>月供(等额本息)：3599.98</span>
+						<span>月供(等额本金)：4653.88</span>
+						<span class="grey">以后每月递减7.86元</span>
+					</div>
+				</div>
+				<div class="item"  style="display: none">
+					<div class="left">
+						<span>首付总计(不含服务费)</span>
+						<span class="price">约<b>80.92</b>万</span>
+					</div>
+					<div class="right">
+						<span>月供(等额本息)：3599.98</span>
+						<span>月供(等额本金)：4653.88</span>
+						<span class="grey">以后每月递减7.86元</span>
+					</div>
+				</div>
+			</div>
+			<div class="btnwrap">
+				<a href="javascript:;" class="submit_btn" onclick="zxff()" data-bid="楼盘id">咨询二手房交易费用</a>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">深圳市吉屋网络技术有限公司 粤ICP备11045667号</footer>
+</div>
+<!--固定底部的按钮-->
+<div class="fixed-bottom-btn">
+	<a href="javascript:;" class="line-btn btn" onclick="yykf()">
+		<span>预约看房</span>
+	</a>
+	<a href="javascript:;" class="yellow-btn btn" onclick="hqdj()">
+		<span>获取底价</span>
+	</a>
+	<a href="javascript:;" class="red-btn btn" onclick="ldzx()">
+		<span>电话咨询</span>
+	</a>
+</div>
+<div class="pop-wrap pop-zxff">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">咨询二手房交易费用</h3>
+				<div class="stats">已有<em>23</em>人查看</div>
+				<div class="text">输入手机号码，咨询二手房交易费用明细。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="pop-wrap pop-yykf">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">预约看房</h3>
+				<div class="stats">已有<em>23</em>人预约</div>
+				<div class="text">输入手机号码，以便置业管家联系你商讨看房时间。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="pop-wrap pop-hqdj">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">获取底价</h3>
+				<div class="stats">已有<em>23</em>人咨询</div>
+				<div class="text">输入手机号码，获取房源底价信息。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--咨询l楼层弹窗-->
+<div class="pop-wrap pop-ldzx">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">留电咨询</h3>
+				<div class="stats">已有<em>23</em>人咨询</div>
+				<div class="text">输入手机号码，以便置业管家回电给你。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--咨询l楼层弹窗-->
+<div class="pop-wrap pop-zxlc">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">咨询楼层</h3>
+				<div class="stats">已有<em>23</em>人咨询</div>
+				<div class="text">输入手机号码，咨询该房源楼层。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--咨询中小学弹窗-->
+<div class="pop-wrap pop-school">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">咨询中小学情况</h3>
+				<div class="stats">已有<em>23</em>人咨询</div>
+				<div class="text">输入手机号码，咨询该房源附近的中小学情况。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--出价弹窗-->
+<div class="pop-wrap pop-price">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">提交你的意向购买总价</h3>
+				<div class="stats">已有<em>23</em>人出价，好房不等人</div>
+				<ul class="formBox">
+					<li class="pricebox">
+						<input type="number" placeholder="请输入你的出价" class="price">
+					</li>
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send2(this)" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--成交记录弹窗-->
+<div class="pop-wrap pop-cjcx">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main"><i class="close-pop"></i>
+				<h3 class="tit">查看成交记录</h3>
+				<div class="stats">已有<em>23</em>人查看</div>
+				<div class="text">输入手机号码，立即解锁查看小区最近成交价。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--成交记录弹窗-->
+<div class="pop-wrap pop-cjcxNo">
+	<div class="mask"></div>
+	<div class="pop-box">
+		<div class="pop-content">
+			<div class="pop-content-main">
+				<i class="close-pop"></i>
+				<h3 class="tit">成交记录</h3>
+				<!--<div class="stats">已有<em>23</em>人查看</div>-->
+				<div class="text">暂无上传成交记录，输入手机号码，以便获取最新成交记录。</div>
+				<ul class="formBox">
+					<li class="telbox">
+						<input type="tel" placeholder="请输入手机号码" class="tel">
+						<a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+					</li>
+					<li class="yzmbox">
+						<input type="tel" placeholder="请输入验证码" class="yzm">
+					</li>
+				</ul>
+				<div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script type="text/javascript" src="js/swiper-3.4.2.jquery.min.js"></script>
+<script type="text/javascript" src="js/fy_index.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+	/*微信分享配置*/
+	var timestamp = '';
+	var nonceStr = '';
+	var signature = '';
+	var appId = '';
+	function getSign(){
+		$.ajax({
+			type: 'POST',
+			url: 'http://m.jiwu.com/mWechat!getSign.action',//修改为自定义接口地址
+			data: {'addr':window.location.href},
+			dataType: 'jsonp',
+			jsonp: "callback",
+			jsonpCallback:"returnMsg",
+			success: function(data){
+				timestamp = data.timestamp;
+				nonceStr = data.nonceStr;
+				signature = data.signature;
+				appId = data.appId;
+				configwx();
+			},
+			error: function(xhr, type){}
+		})
+	}
+	function configwx(){
+		wx.config({
+			debug: false,
+			appId: appId,
+			timestamp: timestamp,
+			nonceStr: nonceStr,
+			signature: signature,
+			jsApiList: ['updateAppMessageShareData','updateTimelineShareData']
+		});
+	}
+	getSign();
+	wx.ready(function(){
+		shareData ={
+			title: "深圳楼盘推荐",
+			desc: "",
+			link: window.location.href,
+			imgUrl: "https://toufang.jiwu.com/images/share.jpg",
+			type: '',
+			dataUrl: '',
+			success: function(){
+				//alert("success！congratulation！");
+			},
+			cancel: function(){}
+		};
+		wx.updateAppMessageShareData(shareData);
+		wx.updateTimelineShareData(shareData);
+	})
+
+
+</script>
+</body>
+</html>

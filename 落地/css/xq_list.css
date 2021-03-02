@@ -1,0 +1,611 @@
+/* 精选小区 */
+body{
+    background: linear-gradient(360deg, rgba(255, 108, 110, 1), #f0303b);
+}
+/*.page{*/
+    /*background-image: url("../images/list/header.png");*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100%;*/
+/*}*/
+ins{
+    text-decoration: none;
+}
+.liuzi .scroll-top{
+    position: relative;
+    margin-top: 0.2rem;
+}
+.liuzi  .scroll-top .shade{
+    position: absolute;
+    background-size:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.1rem;
+}
+.liuzi  .scroll-top .scroll-top-window{
+    height: 0.3rem;
+    overflow: hidden;
+    position: relative;
+}
+.liuzi  .scroll-top-window ul {
+    padding: 0;
+    position: relative;
+}
+
+.liuzi  .scroll-top ul li{
+    margin-bottom: 0.16rem;
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    height: 0.24rem;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.content{
+    padding: 0.45rem 0.15rem 0;
+}
+.content-ns{
+    padding: 0 0.15rem 0;
+    margin-top: 0.48rem;
+}
+.banner{
+    clear: both;
+    width: 100%;
+    background: #16265C;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    margin-top: -0.25rem;
+    margin-bottom: 0.48rem;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.content .jxxq{
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0.65rem 1.25rem 0px rgba(27, 27, 44, 0.14);
+    border-radius: 0.2rem;
+}
+ .first{
+    width: 5.28rem;
+    height: 0.79rem;
+    background-image: url("../images/list/first.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    left: 15%;
+    margin-top: -0.1rem;
+}
+.first p{
+    font-size: 0.36rem;
+    font-family: PingFang SC;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 0.6rem;
+    text-align: center;
+}
+.txt{
+    width: 100%;
+}
+.txt.list-txt{
+    padding-top: 0.8rem;
+}
+.txt .blue{
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.3rem;
+    background: #2DC8EA;
+    border-radius: 0px 0.08rem 0.08rem 0px;
+}
+.txt .name{
+    height: 0.34rem;
+    font-size: 0.36rem;
+    font-family: PingFang SC;
+    font-weight: 800;
+    color: #29211D;
+    line-height: 0.35rem;
+    width: 60%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 0.1rem;
+}
+.txt .price{
+    float: right;
+    font-size: 0.3rem;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #FF5F61;
+    line-height: 0.4rem;
+    padding-right: 0.3rem;
+}
+ .tag{
+    width: 6.6rem;
+    height: 0.5rem;
+    background: #F8F8F8;
+    margin-left: 0.3rem;
+    margin-top: 0.31rem;
+    margin-bottom: 0.29rem;
+    white-space: nowrap;
+    border-radius: 0.08rem;
+}
+ .tag span{
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    line-height: 0.28rem;
+    padding-right: 0.29rem;
+}
+.tag .tag-name{
+    width: 1.8rem;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.19rem;
+    padding-top: 0.1rem;
+    float: left;
+
+}
+
+.tags{
+    padding:0 0.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tags i img{
+    width: 0.3rem;
+    height: 0.25rem;    
+}
+.tags span{
+    font-size: 0.28rem;
+    font-weight: 400;
+    color: #29211d;
+    line-height: 0.5rem;
+    margin-left: 0.18rem;
+}
+.scroll-box{
+    margin-top: 0.38rem;
+    padding: 0 0.3rem 0.4rem;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.scroll-box .item{
+    display: inline-block;
+    border-radius: 0.1rem;
+    margin-right: 0.2rem;
+    position: relative;
+    height: 4.35rem;
+    width: 3.56rem;
+    overflow: hidden;
+}
+.scroll-box .item:last-child{
+    margin-right: 0;
+}
+.scroll-box .itembg{
+    background-image: url("../images/list/bg3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 2.74rem;
+    height: 4.35rem;
+    border-radius: 0.08rem;
+    text-align: center;
+
+}
+.scroll-box .item .img{
+    width: 3.56rem;
+    height: 2.67rem;
+}
+.scroll-box .item .img img{
+    width: 3.56rem;
+    height: 2.67rem;
+    border-radius: 0.08rem;
+}
+.scroll-box .item .hd{
+    width: 2.5rem;
+    height: 0.44rem;
+    font-size: 0.24rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 0.1rem 0.2rem;
+    background-color: #ffb516;
+    border-radius: 0.08rem 0rem 0.2rem 0rem;
+    width: auto;
+    position: absolute;
+    line-height: 0.28rem;
+    top: 0;
+    left: 0;
+}
+.scroll-box .item ul{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.28rem;
+    line-height: 0.28rem;
+    margin-top: 0.2rem;
+    font-weight: bold;
+}
+.scroll-box .item .price{
+    color: #FF5F61;
+}
+.scroll-box .item .btn{
+    width: 3.56rem;
+    height: 0.78rem;
+    background: #ff6c6e;
+    border-radius: 0.08rem;
+    line-height: 0.78rem;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0.4rem;
+}
+.white{
+    padding: 0 0.3rem;
+    width: 6.6rem;
+    height: 0.01rem;
+    background: #D4D3D3;
+    margin: 0 auto;
+}
+.list-one{
+    padding-top: 0.4rem;
+}
+.scroll-box .itembg p{
+    padding-top: 1.14rem;
+    font-size: 0.28rem;
+    font-family: PingFang SC;
+    font-weight: 800;
+    color: #29211D;
+    line-height: 0.48rem;
+}
+.scroll-box .itembg p.good{
+    font-size: 0.24rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #29211D;
+    line-height: 0.32rem;
+   padding-top: 0.19rem;
+}
+
+.scroll-box .itembg .ckgd-btn{
+    width: 1.9rem;
+    height: 0.68rem;
+    background: #FF6C6E;
+    border-radius: 0.08rem;
+    /*margin-top: 0.4rem;*/
+    margin:  0.4rem auto;
+}
+.scroll-box .itembg  .ckgd-btn a{
+    font-size: 0.3rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 0.68rem;
+}
+.jxxq-ns{
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0.65rem 1.25rem 0px rgba(27, 27, 44, 0.14);
+    border-radius: 0.2rem;
+}
+.fixed{
+    width: 100%;
+    height: 1.28rem;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+}
+.fixed .flx{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fixed .flx li.active{
+    width: 3.25rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    border-radius: 0.08rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    background-color: #ffffff;
+    color: #ff6c6e;
+    font-weight: 500;
+    font-size: 0.32rem;
+    border: 1px solid #ff6c6e;
+}
+.fixed .flx li.ck{
+    width: 3.25rem;
+    height: 0.88rem;
+    background: linear-gradient(90deg, #FF5F61 0%, #FF6C6E 100%);
+    margin-top: 0.2rem;
+    text-align: center;
+    line-height: 0.88rem;
+    border-radius: 0.08rem;
+    color: #ffffff;
+}
+
+.clearfix .num{
+    margin-top: 0.2rem;
+    display: block;
+}   
+
+/* 帮我找房 */
+.divgap{
+    z-index: 99;
+    position: absolute;
+    top:50%;
+	background: #FFFFFF;
+	border-radius: 0.08rem;
+    left: 0.4rem;
+    right: 0.4rem;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+.divgap .close-pop{
+	width: 0.42rem;
+	height: 0.42rem;
+	background: url("../images/list/close1.png") no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.divgap .top-text .tit{
+	font-size: 0.4rem;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #29211D;
+	line-height: 0.6rem;
+}
+.divgap .price-box{
+	margin-top: 0.85rem;
+	border-bottom: 0.01rem rgba(240, 242, 245, 1) solid;
+	padding-bottom: 0.3rem;
+    margin-bottom: 0.3rem;
+	display: flex;
+	height: 1.35rem
+}
+.divgap .tit-span{
+	font-size: 0.32rem;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #29211D;
+	line-height: 0.6rem;
+	display: inline-block;
+	white-space: nowrap;
+}
+.divgap .rang-box{
+	margin-left: 0.5rem;
+	width: 5.16rem;
+	margin-top: 0.07rem;
+}
+.theme-green{
+	height: 0.4rem;
+}
+.slider-container .pointer{
+    cursor: auto;
+}
+.theme-green .back-bar{
+	background-image: url("../images/list/rang-bg.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: bottom;
+	width: 100%;
+	height: 0.4rem;
+	position: relative;	
+}
+.theme-green .back-bar .selected-bar{
+    background-image: url("../images/list/rang-bg-on.png");
+	left: 0!important;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100%;
+	height: 0.4rem;
+	width: 100%
+}
+.theme-green .back-bar .pointer {
+    height: 0.6rem;
+    width: 0.6rem;
+    background-image: url("../images/list/boll.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    top: -.1rem;
+    position: absolute;
+    z-index: 2;
+}
+.slider-container .back-bar .pointer-label {
+    position: absolute;
+    text-align: center;
+    font-size: 0.32rem;
+    font-family: PingFang SC;
+    font-weight: 800;
+    color: #FF6466;
+    line-height: 0.32rem;
+    top: -0.65rem;
+    left: 30%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.slider-container .scale {
+    position: relative;
+    padding-bottom: 0.4rem;
+    width: 90%;
+    padding-top: 0.07rem;
+	white-space: nowrap;
+}
+.slider-container .scale span {
+    position: absolute;
+    height: .24rem;
+}
+.slider-container .scale ins{
+    font-size: 0.24rem;
+    font-weight: 500;
+    color: #26292b;
+    position: absolute;
+    top: 0.15625rem;
+    white-space: nowrap;
+}
+.liuzi .hx-box{
+	display: flex;
+	border-bottom: 0.01rem rgba(240,242,245,1) solid;
+	padding-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
+}
+.liuzi .quyu{
+    margin-bottom: 0.1rem;
+}
+.selcet-quyu{
+    height: .88rem;
+    border-radius: 0.08rem;
+    margin-left: 0.3rem;
+    width: 100%;
+    margin-top: -0.12rem;
+    background: #F8F8F8;
+    position: relative;
+}
+.selcet-quyu span{
+    width: 100%;
+    height: .88rem;
+    border-radius: 0.08rem;
+    padding-left: 0.3rem;
+    line-height: 0.88rem;
+}
+.selcet-quyu i{
+    display: inline-block;
+    width:0.18rem;
+    height: 0.12rem;
+    background-image: url("../images/list/arr-down.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.4rem;
+}
+.liuzi .hx-box li{
+	float: left;
+	height: 0.68rem;
+	line-height: 0.68rem;
+	background: #F8F8F8;
+	border-radius: 0.08rem;
+	padding: 0 0.28rem;
+	margin-left: 0.2rem;
+	margin-bottom: 0.2rem;
+	font-size: 0.32rem;
+	font-weight: 500;
+}
+.liuzi .hx-box li.active{
+	background: #ff6465;
+	color: #FFFFFF;
+}
+.divgap .zf-num{
+	    font-size: 0.24rem;
+	    font-family: PingFang SC;
+	    font-weight: 400;
+	    color: #FF6C6E;
+        background-image: url("../images/list/bg2.png");
+    background-repeat: no-repeat;
+	    background-size: 100%;
+	    height: 0.39rem;
+	    line-height: 0.39rem;
+	    margin: 0.2rem auto 0.1rem;
+	    text-align: center;
+}
+.mfkj .hx-box{
+    margin-top: 0.4rem;
+}
+
+.hx-box .tab-bar{
+    width: 5.8rem;
+    height: 0.88rem;
+    margin-left: 0.3rem;
+}
+.hx-box .drop{
+    display: flex;
+    justify-content: space-between;
+    line-height: 0.58rem;
+}
+.hx-box .drop em{
+    font-size: 0.32rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #29211D;
+}
+.hx-box .drop .arrow{
+    width: 0.18rem;
+    height: 0.18rem;
+}
+.hx-box .drop img{
+    width: 0.18rem;
+    height: 0.18rem;
+}
+.pop-bwkj .divgap .hx-box{
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.pop-search{
+    position: fixed;
+    z-index: 999;
+}
+.pop-search .pop-box{
+    top: 0;
+    transform: translateX(0);
+    overflow-y: auto;
+    padding: 0.2rem 0.3rem 0;
+    max-height: 7rem;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+
+}
+.pop-search .pop-box .search-list{
+    display: none;
+    /*margin-top: -0.4rem;*/
+}
+.pop-search .pop-box li{
+    line-height: 0.9rem;
+    font-size: 0.32rem;
+    border-bottom: 0.01rem  rgba(212, 211, 211, 1) solid;
+}
+.pop-search .pop-box li:last-child{
+    border-bottom: none;
+}
+.pop-search .pop-box li .red{
+    color: rgba(255, 108, 110, 1);
+}
+.pop-search .input{
+    display: flex;
+}
+.pop-search .reset-search{
+    flex-shrink: 0;
+    /*color: #939DA5;*/
+    font-size: .32rem;
+    line-height: 0.88rem;
+    padding-left: 0.3rem;
+}
+.pop-search .search-inp{
+    height: .88rem;
+    background: #F8F8F8;
+    border-radius: 0.08rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    margin-bottom: 0.2rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-radius: .9375rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}

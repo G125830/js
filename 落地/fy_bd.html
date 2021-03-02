@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>房源榜单</title>
+    <meta name="description" content="吉屋">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,address=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fy_bd.css">
+    <link rel="stylesheet" href="css/bd_common.css">
+    <link rel="stylesheet" href="css/quyuSelect.css">
+    <script type="text/javascript">
+        ;(function(win) {
+            var remCalc = {};
+            var docEl = win.document.documentElement,
+                tid;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                //if (width > 750) { width = 750 }
+                var rem = width / 750*100;
+                docEl.style.fontSize = rem + "px";
+                remCalc.rem = rem;
+                //误差、兼容性处理
+                var actualSize = parseFloat(window.getComputedStyle(document.documentElement)["font-size"]);
+                if (actualSize !== rem && actualSize > 0 && Math.abs(actualSize - rem) > 1) {
+                    var remScaled = rem * rem / actualSize;
+                    docEl.style.fontSize = remScaled + "px"
+                }
+            }
+
+            function dbcRefresh() {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 100)
+            }
+
+            win.addEventListener("resize", function() { dbcRefresh() }, false);
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) { dbcRefresh() }
+            }, false);
+            refreshRem();
+            remCalc.refreshRem = refreshRem;
+            win.remCalc = remCalc
+        })(window);
+        var _hmt = _hmt || [];
+        //百度自动推送代码
+        (function(){
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?138bec4bfa104f11f52a368c5200a54e";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <!-- 引入公共头部模块 -->
+        <div class="banner">
+            <header class="header">
+                <div class="left">
+                    <a href="#" class="logo"><img src="images/logo.png"></a>
+                </div>
+                <!-- <div class="middle">房源详情</div> -->
+                <div class="tel-number">
+                    <span>4006-390-287</span>
+                </div>
+            </header>
+            <div class="text">
+                <h1>深圳房源捡漏榜</h1>
+                <span>数据更新至2021.01.08</span>
+            </div>
+        </div>
+        <!-- 榜单 -->
+        <div class="content">
+            <div class="main">
+                <div class="menu">
+                    <a href="#" class="active">房源捡漏榜<div class="one"></div></a>
+                    <a href="#">抢手房源榜<div></div></a>
+                    <a href="#">热门上新榜<div></div></a>
+                    <a href="#">热销楼盘榜<div></div></a>
+                    <a href="#">热搜新房榜<div></div></a>
+                    <a href="#">人气楼盘榜<div></div></a>
+                    <a href="#">季度热盘榜<div></div></a>
+                </div>
+            </div>
+            <!-- top榜单 -->
+            <div class="bdph">
+               <div class="top">
+                    <div class="img">
+                       <img src="images/fy/banner.png">
+                    </div>
+                    <div class="hd"><i class="big" style="font-style: italic;">TOP1</i><span class="hd_num">价格低于同小区户型的37%</span></div>
+                    <h3 class="bdph_title">碧桂园沙骏园</h3>
+                    <div class="bdph_price">
+                        <span class="count">总价 : <em class="money">1090万</em></span>
+                        <span>场均 : &nbsp;109800/㎡</span>
+                    </div>
+                    <div class="tag">
+                        <span class="tag-name">宝安-西乡</span>
+                        <span>5室内1厅3卫</span>
+                        <span>116㎡</span>
+                        <span>东南</span>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li>
+                                <i><img src="images/list/p1.png"></i>
+                                <span>人车分流，绿化率高，大型社区，户型多样</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p2.png"></i>
+                                <span>总价低于龙岗区同物业类型平均总价的21%</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p3.png"></i>
+                                <span>靠近主干道，交通便捷，地铁纵横</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p4.png"></i>
+                                <span>十二年教育，附近3所学校，名牌高中</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p5.png"></i>
+                                <span>医疗教育</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p6.png"></i>
+                                <span>购物shopping</span>
+                            </li>
+                            <li>
+                                <i><img src="images/list/p7.png"></i>
+                                <span>下午茶</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-btn">
+                        <a href="javascript:;" class="yellow-btn btn" onclick="hqdj()">获取底价</a>
+                        <a href="javascript:;" class="yykf" onclick="yykf()" data-bid="楼盘id">预约看房</a>
+                    </div>
+               </div>
+            </div>
+            <div class="bdph">
+                <div class="top">
+                     <div class="img">
+                        <img src="images/fy/banner.png">
+                     </div>
+                     <div class="hd"><i class="big" style="font-style: italic;">TOP2</i><span class="hd_num">价格低于同小区户型的37%</span></div>
+                     <h3 class="bdph_title">碧桂园沙骏园</h3>
+                     <div class="bdph_price">
+                         <span class="count">总价 : <em class="money">1090万</em></span>
+                         <span>场均 : &nbsp;109800/㎡</span>
+                     </div>
+                     <div class="tag">
+                         <span class="tag-name">宝安-西乡</span>
+                         <span>5室内1厅3卫</span>
+                         <span>116㎡</span>
+                         <span>东南</span>
+                     </div>
+                     <div class="tags">
+                         <ul>
+                             <li>
+                                 <i><img src="images/list/p1.png"></i>
+                                 <span>人车分流，绿化率高，大型社区，户型多样</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p2.png"></i>
+                                 <span>总价低于龙岗区同物业类型平均总价的21%</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p3.png"></i>
+                                 <span>靠近主干道，交通便捷，地铁纵横</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p4.png"></i>
+                                 <span>十二年教育，附近3所学校，名牌高中</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p5.png"></i>
+                                 <span>医疗教育</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p6.png"></i>
+                                 <span>购物shopping</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p7.png"></i>
+                                 <span>下午茶</span>
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="bottom-btn">
+                         <a href="javascript:;" class="yellow-btn btn" onclick="hqdj()">获取底价</a>
+                         <a href="javascript:;" class="yykf" onclick="yykf()" data-bid="楼盘id">预约看房</a>
+                     </div>
+                </div>
+             </div>
+             <div class="bdph">
+                <div class="top">
+                     <div class="img">
+                        <img src="images/fy/banner.png">
+                     </div>
+                     <div class="hd"><i class="big" style="font-style: italic;">TOP3</i><span class="hd_num">价格低于同小区户型的37%</span></div>
+                     <h3 class="bdph_title">碧桂园沙骏园</h3>
+                     <div class="bdph_price">
+                         <span class="count">总价 : <em class="money">1090万</em></span>
+                         <span>场均 : &nbsp;109800/㎡</span>
+                     </div>
+                     <div class="tag">
+                         <span class="tag-name">宝安-西乡</span>
+                         <span>5室内1厅3卫</span>
+                         <span>116㎡</span>
+                         <span>东南</span>
+                     </div>
+                     <div class="tags">
+                         <ul>
+                             <li>
+                                 <i><img src="images/list/p1.png"></i>
+                                 <span>人车分流，绿化率高，大型社区，户型多样</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p2.png"></i>
+                                 <span>总价低于龙岗区同物业类型平均总价的21%</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p3.png"></i>
+                                 <span>靠近主干道，交通便捷，地铁纵横</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p4.png"></i>
+                                 <span>十二年教育，附近3所学校，名牌高中</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p5.png"></i>
+                                 <span>医疗教育</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p6.png"></i>
+                                 <span>购物shopping</span>
+                             </li>
+                             <li>
+                                 <i><img src="images/list/p7.png"></i>
+                                 <span>下午茶</span>
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="bottom-btn">
+                         <a href="javascript:;" class="yellow-btn btn" onclick="hqdj()">获取底价</a>
+                         <a href="javascript:;" class="yykf" onclick="yykf()" data-bid="楼盘id">预约看房</a>
+                     </div>
+                </div>
+             </div>
+        </div>
+        <footer class="footer">深圳市吉屋网络技术有限公司 粤ICP备11045667号</footer>
+    </div>
+    <!--固定底部的按钮-->
+    <div class="fixed-bottom-btn">
+        <a href="javascript:;" class="line-btn btn" onclick="bwzf()">帮我找房</a>
+        <a href="javascript:;" class="pink-btn btn" onclick="bwkj()">帮我砍价</a>
+    </div>
+    <div class="right-bottom-btn">
+        <div class="bottom-text" style="display: none;">
+            <ul style="white-space: inherit;">
+                <li>
+                    <a href="javascript:;">龙岗区</a>
+                    <i><img src="images/bd/icon-dw.png"></i>
+                </li>
+                <li>
+                    <a href="javascript:;">大鹏新区</a>
+                    <i><img src="images/bd/icon-dw.png"></i>
+                </li>
+                <li>
+                    <a href="javascript:;">福田区</a>
+                    <i><img src="images/bd/icon-dw.png"></i>
+                </li>
+                <li>
+                    <a href="javascript:;">南山区</a>
+                    <i><img src="images/bd/icon-dw.png"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="qc-btn" onclick="qc()">全城<img class="rotate-up" src="images/bd/arr-up.png"></div>
+    </div>
+    <!-- 获取底价弹窗 -->
+    <div class="pop-wrap pop-hqdj">
+        <div class="mask"></div>
+        <div class="pop-box">
+            <div class="pop-content">
+                <div class="pop-content-main"><i class="close-pop"></i>
+                    <h3 class="tit">获取底价</h3>
+                    <div class="stats">已有<em>23</em>人咨询</div>
+                    <div class="text">输入手机号码，获取房源底价信息。</div>
+                    <ul class="formBox">
+                        <li class="telbox">
+                            <input type="tel" placeholder="请输入手机号码" class="tel">
+                            <a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+                        </li>
+                        <li class="yzmbox">
+                            <input type="tel" placeholder="请输入验证码" class="yzm">
+                        </li>
+                    </ul>
+                    <div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 预约看房弹窗 -->
+    <div class="pop-wrap pop-yykf">
+        <div class="mask"></div>
+        <div class="pop-box">
+            <div class="pop-content">
+                <div class="pop-content-main"><i class="close-pop"></i>
+                    <h3 class="tit">预约看房</h3>
+                    <div class="stats">已有<em>23</em>人预约</div>
+                    <div class="text">输入手机号码，以便置业管家联系你商讨看房时间。</div>
+                    <ul class="formBox">
+                        <li class="telbox">
+                            <input type="tel" placeholder="请输入手机号码" class="tel">
+                            <a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+                        </li>
+                        <li class="yzmbox">
+                            <input type="tel" placeholder="请输入验证码" class="yzm">
+                        </li>
+                    </ul>
+                    <div class="btnwrap"><a href="javascript:;" class="btn btn-green ok" onclick="send()" data-bid="楼盘id">提交</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 帮我找房弹窗 -->
+    <div class="pop-wrap pop-bwzf">
+        <div class="mask"></div>
+         <div class="liuzi divgap">
+            <div class="close-pop"></div>
+            <div class="top-text">
+                <b class="tit">输入购房需求,帮你找房</b>
+            </div>
+            <div class="price-box">
+                <span class="tit-span">总价</span>
+                <div class="rang-box">
+                    <input type="hidden" class="range-slider"  value="750"/>
+                </div>
+            </div>
+            <div class="hx-box">
+                <span class="tit-span">户型</span>
+                <ul class="clearfix">
+                    <li class="active">不限</li>
+                    <li>一室</li>
+                    <li>二室</li>
+                    <li>三室</li>
+                    <li>四室</li>
+                    <li>四室以上</li>
+                </ul>
+            </div>
+            <div class="hx-box quyu">
+                <span class="tit-span">区域</span>
+                <div class="selcet-quyu" >
+                    <span id="select">不限</span>
+                    <i></i>
+                </div>
+            </div>
+            <ul class="formBox">
+                <li class="telbox">
+                    <input type="tel" placeholder="请输入手机号" class="tel" value="">
+                    <a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+                </li>
+                <li class="yzmbox" style="display: list-item;">
+                    <input type="tel" placeholder="请输入验证码"  class="yzm">
+                </li>
+            </ul>
+            <div class="btnwrap">
+                <a href="javascript:;" class="submit_btn" onclick="send(this)" data-bid="楼盘id">提交找房服务</a>
+            </div>
+            <div class="zf-num">已帮<b>3248</b>人找到满意的房子</div>
+            <div class="scroll-top">
+                <div class="scroll-top-window">
+                    <ul>
+                        <li>
+                            <span>187**23333 4分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 5分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 8分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 1分钟前</span>
+                            <span>187**23333 2分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 1分钟前</span>
+                            <span>187**23333 2分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 3分钟前</span>
+                            <span>187**23333 3分钟前</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--遮罩层-->
+                <div class="shade"></div>
+                </div>
+            </div>
+     </div>
+     <!-- 帮我砍价弹窗 -->
+     <div class="pop-wrap pop-bwkj">
+        <div class="mask"></div>
+        <div class="liuzi divgap mfkj">
+            <div class="close-pop"></div>
+            <div class="top-text">
+                <b class="tit" style="display: block;text-align: center;">你买房，我砍价</b>
+                <span class="subline" style="font-size: 0.28rem;text-align: center; color: #29211d;display: block;">累计服务客户<em style="color:#ff6465 ;">10000+</em>，平均砍价<em style="color: #ff6465;">4.27</em>万</span>
+            </div>
+            <div class="hx-box quyu">
+                <span class="tit-span">区域</span>
+                <div class="selcet-quyu" >
+                    <span id="select2">不限</span>
+                    <i></i>
+                </div>
+            </div>
+            <ul class="formBox">
+                <li>
+                    <span onclick="searchPop()" class="input-xq">请输入意向小区</span>
+                </li>
+                <li class="telbox">
+                    <input type="tel" placeholder="请输入手机号" class="tel" value="">
+                    <a href="javascript:;" class="sendYzm" onclick="yzmCountDown(this)">发送验证码</a>
+                </li>
+                <li class="yzmbox" style="display: list-item;">
+                    <input type="tel" placeholder="请输入验证码"  class="yzm">
+                </li>
+            </ul>
+            <div class="btnwrap">
+                <a href="javascript:;" class="submit_btn" onclick="send(this)" data-bid="楼盘id">申请免费砍价服务(8%砍价幅度)</a>
+            </div>
+            <div class="scroll-top">
+                <div class="scroll-top-window">
+                    <ul>
+                        <li>
+                            <span>187**23333 4分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 5分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 8分钟前</span>
+                            <span>187**23333 8分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 1分钟前</span>
+                            <span>187**23333 2分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 1分钟前</span>
+                            <span>187**23333 2分钟前</span>
+                        </li>
+                        <li>
+                            <span>187**23333 3分钟前</span>
+                            <span>187**23333 3分钟前</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--遮罩层-->
+                <div class="shade"></div>
+                </div>
+        </div>
+
+    </div>
+    <!-- 区域选择 -->
+    <div class="pop-wrap pop-select">
+        <div class="mask"></div>
+        <div class="divgap select-box">
+            <div class="search">
+                <div class="dropDown">
+                    <div class="dropProv">
+                        <ul class="dropProvUl dropUl"></ul>
+                    </div>
+                    <div class="dropCity">
+                        <ul class="dropCityUl dropUl"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="javascript:;" class="reset"><i></i>重置</a>
+                <a href="javascript:;" class="sure">确定</a>
+            </div>
+        </div>
+    </div>
+     <!--模糊搜索-->
+     <div class="pop-wrap pop-search">
+        <div class="mask"></div>
+        <div class="pop-box">
+            <div class="pop-content">
+                <div class="input">
+                    <input type="text"  placeholder="请输入意向小区" class="search-inp" id="soinput">
+                    <a href="javascript:;" class="reset-search">取消</a>
+                </div>
+                <div class="search-list">
+                    <ul>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                        <li><a href="javascript:;">阳基御龙山</a></li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/fy_bd.js"></script>
+    <script type="text/javascript" src="js/quyuSelect.js"></script>
+    <script type="text/javascript" src="js/jquery.range.js"></script>
+    <script type="text/javascript">
+        /*微信分享配置*/
+        var timestamp = '';
+        var nonceStr = '';
+        var signature = '';
+        var appId = '';
+        function getSign(){
+            $.ajax({
+                type: 'POST',
+                url: 'http://m.jiwu.com/mWechat!getSign.action',//修改为自定义接口地址
+                data: {'addr':window.location.href},
+                dataType: 'jsonp',
+                jsonp: "callback",
+                jsonpCallback:"returnMsg",
+                success: function(data){
+                    timestamp = data.timestamp;
+                    nonceStr = data.nonceStr;
+                    signature = data.signature;
+                    appId = data.appId;
+                    configwx();
+                },
+                error: function(xhr, type){}
+            })
+        }
+        function configwx(){
+            wx.config({
+                debug: false,
+                appId: appId,
+                timestamp: timestamp,
+                nonceStr: nonceStr,
+                signature: signature,
+                jsApiList: ['updateAppMessageShareData','updateTimelineShareData']
+            });
+        }
+        getSign();
+
+        wx.ready(function(){
+            shareData ={
+                title: "深圳楼盘推荐",
+                desc: "",
+                link: window.location.href,
+                imgUrl: "https://toufang.jiwu.com/images/share.jpg",
+                type: '',
+                dataUrl: '',
+                success: function(){
+                    //alert("success！congratulation！");
+                },
+                cancel: function(){}
+            };
+            wx.updateAppMessageShareData(shareData);
+            wx.updateTimelineShareData(shareData);
+        })
+
+
+    </script>
+
+</body>
+
+</html>

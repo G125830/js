@@ -1,0 +1,128 @@
+.pop-select .select-box{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    transform: none;
+    border-radius: .3rem .3rem 0px 0px;
+    padding: 0;
+    top: auto;
+    overflow: hidden;
+    position: fixed;
+    /*height: 6.2rem;*/
+}
+.dropDown{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.dropUl{
+    /*list-style: none;*/
+    /*height:6.2rem;*/
+    overflow: auto;
+    background: #F3F3F3;
+    /*padding:0;*/
+}
+/*.dropUl::-webkit-scrollbar {!*滚动条整体样式*!*/
+    /*width: 0.05rem;     !*高宽分别对应横竖滚动条的尺寸*!*/
+    /*height: 0;*/
+/*}*/
+/*.dropUl::-webkit-scrollbar-thumb {!*滚动条里面小方块*!*/
+    /*border-radius: 0.02rem;*/
+    /*-webkit-box-shadow: inset 0 0 0.02rem rgba(0,0,0,0.2);*/
+    /*background: #d1d4db;*/
+/*}*/
+/*.dropUl::-webkit-scrollbar-track {!*滚动条里面轨道*!*/
+    /*-webkit-box-shadow: none;*/
+    /*border-radius: 0px;*/
+    /*!*background: #EDEDED;*!*/
+/*}*/
+.dropProvUl li{
+    height:0.8rem;
+    padding-left:0.7rem;
+    line-height: 0.8rem;
+    cursor: pointer;
+    font-size: 0.28rem;
+}
+.dropProvUl li.on{
+    background-color: #fff;
+    color: rgba(255, 108, 110, 1);
+}
+.dropCityUl{
+    background-color:white;
+}
+.dropCityUl li{
+    width: 4.98rem;
+    height: 0.8rem;
+    padding-left: 0.5rem;
+    font-size: 0.28rem;
+    line-height: 0.8rem;
+
+}
+/*.dropCityUl li:hover{*/
+   /*background-color:#f1f3f6;*/
+/*}*/
+.dropDown .dropProv{
+    width: 2.52rem;
+    background: #F3F3F3;
+    /*height: 6.2rem;*/
+    display: none;
+    height: 7rem;
+    overflow-x: auto;
+}
+.dropDown .dropCity{
+    height: 7rem;
+    overflow-x: auto;
+}
+.dropCityLi{
+    padding-right: 0.4rem;
+}
+.dropCityLi .check{
+    display: inline-block;
+    float: right;
+    width: .28rem;
+    height: .28rem;
+    border: 1px solid #D1D1D1;
+    border-radius:0.04rem;
+    margin-top: 0.25rem;
+}
+.dropCityLi.on .check{
+    border: 1px solid #FF6C6E;
+    background-image: url("../images/check.png");
+    background-size: 0.19rem 0.17rem;
+    width: .28rem;
+    height: .28rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pop-select .bottom{
+    height: 1.28rem;
+    background: #FFFFFF;
+    border-top: 0.01rem rgba(134, 144, 153, .2) solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0.4rem 0;
+}
+.pop-select .bottom .reset{
+    font-size: 0.22rem;
+}
+.pop-select .bottom .reset i{
+    display: block;
+    background-image: url("../images/reset.png");
+    background-size: 100%;
+    width: .44rem;
+    height: .41rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+}
+.pop-select .bottom .sure{
+    display: block;
+    text-align: center;
+    width: 5.85rem;
+    color: #fff;
+    height: .88rem;
+    line-height: 0.88rem;
+    background: linear-gradient(76deg, #FF5F61 0%, #FF6C6E 100%);
+    border-radius: 0.08rem;
+}
